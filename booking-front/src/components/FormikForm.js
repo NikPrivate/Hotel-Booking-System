@@ -7,6 +7,8 @@ export default function FormikForm({
   validationSchema,
   onSubmit,
   innerRef,
+  children,
+  className = "",
 }) {
   return (
     <Formik
@@ -16,7 +18,7 @@ export default function FormikForm({
       validationSchema={validationSchema}
       onSubmit={onSubmit}
     >
-      <Form></Form>
+      <Form className={className}>{children}</Form>
     </Formik>
   );
 }

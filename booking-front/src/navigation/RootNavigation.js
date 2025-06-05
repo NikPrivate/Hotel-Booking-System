@@ -9,11 +9,11 @@ export default function RootNavigation() {
   const routes = useRoutes([
     {
       path: "/",
-      element: <Login />,
+      element: <Register />,
     },
     {
-      path: "/register",
-      element: <Register />,
+      path: "/login",
+      element: <Login />,
     },
     {
       path: "*",

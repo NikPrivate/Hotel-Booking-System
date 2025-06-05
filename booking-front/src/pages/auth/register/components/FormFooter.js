@@ -1,14 +1,20 @@
 import { Box, Checkbox, useTheme } from "@mui/material";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function FormFooter({ agree }) {
   const [clicked, setClicked] = useState(false);
+  const navigate = useNavigate();
 
   const handleColorChange = () => {
     setClicked(!clicked);
   };
 
   const theme = useTheme();
+
+  const handleNavigate = () => {
+    navigate("/login");
+  };
 
   return (
     <div>
@@ -30,21 +36,11 @@ export default function FormFooter({ agree }) {
           .
         </p>
       </div>
-      <Box
-        className="border w-full py-[6px] rounded-md mt-7 cursor-pointer text-center"
-        sx={{
-          backgroundColor: theme.palette.button.primary,
-          color: theme.palette.white.main,
-          "&:hover": {
-            backgroundColor: theme.palette.button.primaryHover,
-          },
-        }}
-      >
-        Sign Up
-      </Box>
       <div className="mt-7">
         Have an account ?{" "}
-        <span className="text-blue-500 cursor-pointer">Log in</span>
+        <span className="text-blue-500 cursor-pointer" onClick={handleNavigate}>
+          Log in
+        </span>
       </div>
     </div>
   );

@@ -7,9 +7,11 @@ import FormikForm from "../../../components/FormikForm";
 import * as Yup from "yup";
 import { Box } from "@mui/material";
 import AuthButton from "../../../components/AuthButton";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const theme = useTheme();
+  const navigate = useNavigate();
 
   const initialValues = { name: "", email: "", password: "" };
 
@@ -26,6 +28,10 @@ export default function Register() {
 
     password: Yup.string().required("Password is a required field"),
   });
+
+  const handleNavigateLogin = () => {
+    navigate("/login");
+  };
 
   const handleSubmit = async (values, { setSubmitting }) => {
     console.log("Form values: ", values);
@@ -63,7 +69,7 @@ export default function Register() {
             placeholder="min. 8 character"
             requiredMark
           />
-          <AuthButton name="Sign Up" />
+          <AuthButton onClick={handleNavigateLogin} name="Sign Up" />
         </FormikForm>
         <FormFooter />
       </div>

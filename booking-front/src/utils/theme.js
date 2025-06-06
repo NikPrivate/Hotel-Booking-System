@@ -14,6 +14,10 @@ export const lightTheme = {
     main: "rgba(255, 255, 255, 1)",
     mainHover: "rgba(240, 240, 240, 1)",
   },
+  black: {
+    main: "rgba(0, 0, 0, 1)",
+    mainHover: "rgba(50, 50, 50, 1)",
+  },
   background: {
     default: "rgba(240, 248, 255, 1)",
     card: "rgba(255, 255, 255, 0.95)",

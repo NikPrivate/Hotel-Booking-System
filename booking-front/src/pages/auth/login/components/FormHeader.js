@@ -18,7 +18,7 @@ export default function FormHeader({ title, message }) {
         {message}
       </h1>
       <div className="flex justify-center items-center pt-7">
-        <GoogleSignUp title="Sign up with Google" />
+        <GoogleSignUp title="Login with Google" />
       </div>
       <div className="flex items-center justify-center mt-7 mb-3">
         <div className="border w-full"></div>

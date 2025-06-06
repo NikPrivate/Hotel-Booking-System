@@ -6,6 +6,7 @@ import FormFooter from "./components/FormFooter";
 import FormikForm from "../../../components/FormikForm";
 import * as Yup from "yup";
 import { Box } from "@mui/material";
+import AuthButton from "../../../components/AuthButton";
 
 export default function Register() {
   const theme = useTheme();
@@ -36,13 +37,13 @@ export default function Register() {
       <div className="col-span-1">
         <img src={LogoImage} alt="Logo" className="h-screen" />
       </div>
-      <div className="col-span-1 pt-10 xl:px-[180px] px-10">
+      <div className="col-span-1 pt-10 xl:px-[180px] px-10 h-screen">
         <FormHeader title="InnSeeker" message="Create your account" />
         <FormikForm
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
-          className="space-y-3"
+          className="!space-y-3"
         >
           <InputTextField
             name="name"
@@ -62,18 +63,7 @@ export default function Register() {
             placeholder="min. 8 character"
             requiredMark
           />
-          <Box
-            className="border w-full py-[6px] rounded-md mt-7 cursor-pointer text-center"
-            sx={{
-              backgroundColor: theme.palette.button.primary,
-              color: theme.palette.white.main,
-              "&:hover": {
-                backgroundColor: theme.palette.button.primaryHover,
-              },
-            }}
-          >
-            Sign Up
-          </Box>
+          <AuthButton name="Sign Up" />
         </FormikForm>
         <FormFooter />
       </div>

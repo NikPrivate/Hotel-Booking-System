@@ -1,4 +1,4 @@
-import { useTheme } from "@emotion/react";
+import { useTheme } from "@mui/material/styles";
 import React from "react";
 import * as Yup from "yup";
 import LogoImage from "../../../assets/login/logo-image.png";
@@ -8,9 +8,11 @@ import InputTextField from "../../../components/InputTextField";
 import { Box } from "@mui/material";
 import AuthButton from "../../../components/AuthButton";
 import FormFooter from "./components/FormFooter";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const theme = useTheme();
+  const navigate = useNavigate();
 
   const initialValues = {
     email: "",
@@ -27,6 +29,11 @@ export default function Login() {
 
     password: Yup.string().required("Password is a required field"),
   });
+
+  const navigateToHome = () => {
+    navigate("/home");
+  };
+
   return (
     <div className="grid xl:grid-cols-2">
       <div className="col-span-1">
@@ -51,7 +58,7 @@ export default function Login() {
             placeholder="min. 8 character"
             requiredMark
           />
-          <AuthButton name="Log In" />
+          <AuthButton name="Log In" onClick={navigateToHome} />
         </FormikForm>
         <FormFooter className="mt-3 flex space-x-2" />
       </div>

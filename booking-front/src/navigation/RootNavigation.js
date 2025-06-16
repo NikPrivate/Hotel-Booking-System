@@ -9,6 +9,7 @@ import Menu from "../pages/layouts/menu/Menu";
 import Favourites from "../pages/layouts/favourites/Favourites";
 import RecentView from "../pages/layouts/recentview/RecentView";
 import HelpAndSupport from "../pages/layouts/helpandsupport/HelpAndSupport";
+import NextStays from "../pages/layouts/nextstays/NextStays";
 
 export default function RootNavigation() {
   const routes = useRoutes([
@@ -31,6 +32,12 @@ export default function RootNavigation() {
             {
               path: "favourites",
               element: <Favourites />,
+              children: [
+                {
+                  path: "next-stay",
+                  element: <NextStays />,
+                },
+              ],
             },
             {
               path: "recently-viewed",

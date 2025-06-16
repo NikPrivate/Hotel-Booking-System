@@ -20,10 +20,6 @@ export default function HomeNavBar({ title }) {
     navigate("/home");
   };
 
-  const navToLogin = () => {
-    navigate("/login");
-  };
-
   const navList = [
     {
       icon: Heart,
@@ -37,7 +33,6 @@ export default function HomeNavBar({ title }) {
     {
       icon: User,
       name: "Log in",
-      link: navToLogin,
     },
     {
       icon: Menu,
@@ -48,8 +43,8 @@ export default function HomeNavBar({ title }) {
   return (
     <div className="flex justify-between items-center">
       <div className="flex items-center cursor-pointer" onClick={navToHome}>
-        <img src={MainLogo} className="h-7 w-7" />
-        <div className="text-xl font-bold">{title}</div>
+        <img src={MainLogo} className="h-8 w-8" />
+        <div className="text-[28px] font-bold">{title}</div>
       </div>
       <div className="cursor-pointer flex">
         {navList.map((item, index) => (

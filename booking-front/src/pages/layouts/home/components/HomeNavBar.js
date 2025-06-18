@@ -41,7 +41,7 @@ export default function HomeNavBar({ title }) {
   ];
 
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center px-[250px]">
       <div className="flex items-center cursor-pointer" onClick={navToHome}>
         <img src={MainLogo} className="h-8 w-8" />
         <div className="text-[28px] font-bold">{title}</div>

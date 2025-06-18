@@ -18,16 +18,34 @@ export default function NextStays() {
 
   const lists = [
     {
-      name: "Narrow down your search by saving your favourite stays here",
       icon: Heart,
+      content: [
+        { text: "Narrow down", bold: true },
+        {
+          text: " your search by saving your favourite stays here",
+          bold: false,
+        },
+      ],
     },
     {
-      name: "Log in to save your favourites for later and create your own lists",
       icon: HamburgerMenu,
+      content: [
+        { text: "Log in to save your favourites for later and ", bold: false },
+        { text: "create your own lists", bold: true },
+      ],
     },
     {
-      name: "Compare your favourites to choose the perfect stay",
       icon: Copy,
+      content: [
+        {
+          text: "Compare",
+          bold: true,
+        },
+        {
+          text: " your favourites to choose the perfect stay",
+          bold: false,
+        },
+      ],
     },
   ];
   return (
@@ -43,10 +61,12 @@ export default function NextStays() {
             >
               <img src={list.icon} className="w-4 h-4" />
             </div>
-            <div
-              className={list.name.startsWith("Narrow down") ? "font-bold" : ""}
-            >
-              {list.name}
+            <div>
+              {list.content.map((segment, idx) => (
+                <span key={idx} className={segment.bold ? "font-bold" : ""}>
+                  {segment.text}
+                </span>
+              ))}
             </div>
           </Box>
         ))}

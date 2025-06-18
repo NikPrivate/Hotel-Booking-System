@@ -38,7 +38,7 @@ export default function Menu() {
     {
       name: "Back",
       icon: ArrowBack,
-      link: navToHome,
+      link: isNextStayRoute ? navToFavourites : navToHome,
     },
     {
       name: "Recently viewed",
@@ -67,7 +67,8 @@ export default function Menu() {
   ];
 
   return (
-    <div className="grid grid-cols-4 mt-10">
+    <div className="grid grid-cols-4 mt-10 px-[250px]">
+      {}
       <div className="col-span-1">
         {navList.map((item, index) => (
           <Box

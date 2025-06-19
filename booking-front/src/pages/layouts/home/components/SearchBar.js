@@ -7,6 +7,7 @@ import Expedia from "../../../../assets/home/expedia.png";
 import Vrbo from "../../../../assets/home/vrbo.png";
 import All from "../../../../assets/home/ALL.png";
 import Trip from "../../../../assets/home/Trip-com.png";
+import SearchBarComponent from "./SearchBarComponent";
 
 export default function SearchBar({
   heading,
@@ -45,7 +46,9 @@ export default function SearchBar({
         <div className="font-bold !text-[24px] mb-1">{heading}</div>
         <div>{comments}</div>
       </div>
-      <div>{/* Search Bar */}</div>
+      <div className="px-[250px]">
+        <SearchBarComponent />
+      </div>
       <div className="px-[250px] !mt-10 flex justify-between items-center !pb-6">
         {companyLists.map((list, index) => (
           <img src={list.icon} className="h-4" />

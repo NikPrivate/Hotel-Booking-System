@@ -10,6 +10,7 @@ import Favourites from "../pages/layouts/favourites/Favourites";
 import RecentView from "../pages/layouts/recentview/RecentView";
 import HelpAndSupport from "../pages/layouts/helpandsupport/HelpAndSupport";
 import NextStays from "../pages/layouts/nextstays/NextStays";
+import Deals from "../pages/layouts/deals/Deals";
 
 export default function RootNavigation() {
   const routes = useRoutes([
@@ -48,6 +49,10 @@ export default function RootNavigation() {
               element: <HelpAndSupport />,
             },
           ],
+        },
+        {
+          path: "deals",
+          element: <Deals />,
         },
       ],
     },
